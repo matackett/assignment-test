@@ -1,23 +1,12 @@
-on: 
-  push:
-    paths:
-    - 'test.Rmd'
-name: Check RMarkdown Renders
+name: rmd_renders
+on: [push] 
 jobs:
-  check:
-    runs-on: self-hosted
+  check-rmd:
+    runs-on: ubuntu-latest
     container:
-      image: ghcr.io/statprog-s1-2020/hw1-docker:latest
+      image: rocker/tidyverse:latest
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Install Missing Packages
-      run: |
-        missing = checklist::missing_pkgs(dir = "./", glob = "hw1.Rmd")
-        if (length(missing) > 0)
-          install.packages(pkgs = missing)
-      shell: Rscript {0}
-    - name: Check Renders
-      run: |
-        checklist::check_rmd_renders("test.Rmd")
-      shell: Rscript {0}
+    - name: Check Rmd Rendering
+      run:  Rscript -e "rmarkdown::render('test.Rmd')"
