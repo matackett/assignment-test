@@ -1,5 +1,8 @@
+on: 
+  push:
+    paths:
+    - 'test.Rmd'
 name: RMD Renders
-on: [push] 
 jobs:
   check-rmd:
     runs-on: ubuntu-latest
@@ -8,5 +11,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Check Rmd Rendering
-      run:  Rscript -e "rmarkdown::render('test.Rmd')"
+    - name: Install Missing Packages
+      run: |
+        missing = checklist::missing_pkgs(dir = "./", glob = "test.Rmd")
+        if (length(missing) > 0)
+          install.packages(pkgs = missing)
+      shell: Rscript {0}
+    - name: Check Renders
+      run: |
+        checklist::check_rmd_renders("test.Rmd")
+      shell: Rscript {0}
