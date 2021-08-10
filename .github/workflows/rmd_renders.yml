@@ -1,4 +1,4 @@
-name: rmd_renders
+name: RMD Renders
 on: [push] 
 jobs:
   check-rmd:
