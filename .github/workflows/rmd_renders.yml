@@ -1,7 +1,7 @@
 on: 
   push:
     paths:
-    - 'hw1.Rmd'
+    - 'test.Rmd'
 name: Check RMarkdown Renders
 jobs:
   check:
@@ -19,5 +19,5 @@ jobs:
       shell: Rscript {0}
     - name: Check Renders
       run: |
-        checklist::check_rmd_renders("hw1.Rmd")
+        checklist::check_rmd_renders("test.Rmd")
       shell: Rscript {0}
