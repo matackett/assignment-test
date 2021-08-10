@@ -1,3 +1,6 @@
+[![RMD Renders](https://github.com/matackett/assignment-test/workflows/RMD%20Renders/badge.svg)](https://github.com/matackett/assignment-test/actions?query=workflow:%22RMD%20Renders%22)
+
+
 [![rmd_renders.yml](https://github.com/matackett/assignment-test/workflows/rmd_renders.yml/badge.svg)](https://github.com/matackett/assignment-test/actions?query=workflow:%22rmd_renders.yml%22)
 
 
