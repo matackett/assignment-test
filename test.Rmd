@@ -3,7 +3,7 @@ title: "Test assignment"
 subtitle: "Test"
 author: "INSERT YOUR NAME HERE"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: html_document
 ---
 
 Updates! :) 
