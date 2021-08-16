@@ -12,6 +12,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Check Renders
-      run: |
-        checklist::check_rmd_renders("test.Rmd")
-      shell: Rscript {0}
+      run:  Rscript -e "rmarkdown::render('test.Rmd')"
