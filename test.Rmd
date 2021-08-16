@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
-I made a change
+Making a change to the file.
 
 ```{r}
 library(tidyverse)
