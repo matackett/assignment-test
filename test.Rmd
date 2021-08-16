@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
-blah blah blah
+Updates!
 
 ```{r}
 library(tidyverse)
