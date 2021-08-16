@@ -19,5 +19,5 @@ jobs:
     #  shell:  Rscript {0}
     - name: Check Renders
       run:  |
-        Rscript -e "rmarkdown::render('test.Rmd')"
+        rmarkdown::render('test.Rmd')
       shell:  Rscript {0}
