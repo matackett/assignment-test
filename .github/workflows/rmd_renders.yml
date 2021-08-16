@@ -4,12 +4,11 @@ on:
     - 'test.Rmd'
 name: Check RMarkdown Renders
 jobs:
-  check-rmd:
+  knit:
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Check Renders
+    - uses: actions/checkout@master
+    - name: Check
       run:  Rscript -e "rmarkdown::render('test.Rmd')"
