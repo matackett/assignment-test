@@ -2,12 +2,12 @@ on:
   push:
     paths:
     - 'test.Rmd'
-name: RMD Renders
+name: Check RMarkdown Renders
 jobs:
   check-rmd:
-    runs-on: self-hosted
+    runs-on: rocker
     container:
-      image: ghcr.io/statprog-s1-2020/hw1-docker:latest
+      image: rocker/tidyverse:latest
     steps:
     - name: Checkout
       uses: actions/checkout@master
