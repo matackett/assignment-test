@@ -16,8 +16,8 @@ jobs:
         missing = checklist::missing_pkgs(dir = "./", glob = "test.Rmd")
         if (length(missing) > 0)
           install.packages(pkgs = missing) 
-      shell:  Rscript{0}
+      shell:  Rscript {0}
     - name: Check Renders
       run:  |
         checklist::check_rmd_renders("test.Rmd")
-      shell:  Rscript{0}
+      shell:  Rscript {0}
