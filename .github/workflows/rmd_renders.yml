@@ -10,7 +10,7 @@ jobs:
       image: rocker/tidyverse:latest
     steps:
     - name: Checkout
-    - uses: actions/checkout@master
+      uses: actions/checkout@master
     - name: Install missing packages
       run: |
         missing = checklist::missing_pkgs(dir = "./", glob = "test.Rmd")
