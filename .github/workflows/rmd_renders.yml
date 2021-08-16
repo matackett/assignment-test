@@ -5,7 +5,7 @@ on:
 name: Check RMarkdown Renders
 jobs:
   check-rmd:
-    runs-on: rocker
+    runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
     steps:
