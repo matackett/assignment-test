@@ -10,7 +10,7 @@ output: html_document
 
 
 
-```{r eval = F}
+```{r}
 library(tidyverse)
 ```
 
